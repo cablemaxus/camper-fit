@@ -1,0 +1,17 @@
+{
+  "name": "Camper Fit",
+  "short_name": "Camper Fit",
+  "description": "Korte bodyweight- en dumbbelltrainingen voor onderweg.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6fbf8",
+  "theme_color": "#0f8f78",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
