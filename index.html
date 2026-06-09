@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0f8f78">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Camper Fit">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Camper Fit</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css?v=2">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Onderweg sterker worden</p>
+        <h1>Camper Fit</h1>
+      </div>
+      <button class="icon-button" id="reset-demo" type="button" aria-label="Reset voortgang">↺</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="today-label" id="today-label">Vandaag</p>
+          <h2 id="daily-title">Kies je sessie</h2>
+          <p id="daily-subtitle">Drie korte krachtsessies per week is genoeg om naast hiken en hardlopen sterker te worden.</p>
+        </div>
+        <div class="progress-ring" aria-label="Weekvoortgang">
+          <svg viewBox="0 0 120 120" role="img">
+            <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+            <circle class="ring-value" id="week-ring" cx="60" cy="60" r="50"></circle>
+          </svg>
+          <div class="ring-text">
+            <strong id="week-count">0/3</strong>
+            <span>deze week</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat">
+          <span>Streak</span>
+          <strong id="streak">0 dagen</strong>
+        </article>
+        <article class="stat">
+          <span>XP</span>
+          <strong id="xp">0</strong>
+        </article>
+        <article class="stat">
+          <span>Level</span>
+          <strong id="level">1</strong>
+        </article>
+      </section>
+
+      <section class="progression-card" aria-label="Trainingsopbouw">
+        <div>
+          <span class="progression-label">Vandaag train je op</span>
+          <strong id="training-stage">Basisniveau</strong>
+        </div>
+        <p id="training-progression">Start met nette techniek. De app verhoogt later herhalingen, tempo of sets.</p>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Maak je training</h2>
+          <button class="text-button" id="surprise-me" type="button">Verras me</button>
+        </div>
+
+        <fieldset class="control-group">
+          <legend>Focus</legend>
+          <div class="chips" id="muscle-chips"></div>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Duur</legend>
+          <div class="segmented" id="duration-control">
+            <button type="button" data-duration="12">12 min</button>
+            <button type="button" data-duration="20" class="active">20 min</button>
+            <button type="button" data-duration="30">30 min</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Materiaal</legend>
+          <label class="toggle-row">
+            <input type="checkbox" id="use-dumbbells" checked>
+            <span>Gebruik de 5 kg dumbbells als dat past</span>
+          </label>
+        </fieldset>
+
+        <button class="primary-action" id="start-session" type="button">Start sessie</button>
+      </section>
+
+      <section class="panel session-panel hidden" id="session-panel">
+        <div class="section-title">
+          <h2 id="session-title">Sessie</h2>
+          <span class="pill" id="session-xp">+35 XP</span>
+        </div>
+        <ol class="workout-list" id="workout-list"></ol>
+        <button class="primary-action" id="complete-session" type="button">Training gedaan</button>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Oefenbibliotheek</h2>
+          <select id="library-filter" aria-label="Filter oefeningen">
+            <option value="all">Alles</option>
+          </select>
+        </div>
+        <div class="exercise-list" id="exercise-list"></div>
+      </section>
+
+      <section class="panel method">
+        <h2>De methode</h2>
+        <p>
+          Doe 3 sessies per week. Elke sessie heeft 5 tot 7 oefeningen: benen, push, pull/rug, core en mobiliteit.
+          De app maakt oefeningen automatisch zwaarder naarmate je sessies afrondt: eerst meer herhalingen,
+          daarna langzamer tempo en uiteindelijk extra sets of moeilijkere varianten.
+        </p>
+        <ul>
+          <li><strong>Kracht:</strong> 2 tot 4 sets per oefening, meestal 8 tot 15 herhalingen.</li>
+          <li><strong>Mobiliteit:</strong> dagelijks 5 minuten heupen, hamstrings, borst en rug.</li>
+          <li><strong>Actie-systeem:</strong> wekelijkse doelring, streak, XP, levels en een kleine resetknop als de reis anders loopt.</li>
+        </ul>
+        <p class="sources">
+          Gebaseerd op richtlijnen van
+          <a href="https://www.who.int/publications/i/item/9789240015128" target="_blank" rel="noreferrer">WHO</a>,
+          <a href="https://www.acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines" target="_blank" rel="noreferrer">ACSM</a>
+          en no-equipment routines van
+          <a href="https://www.nhs.uk/live-well/exercise/strength-exercises/" target="_blank" rel="noreferrer">NHS</a>.
+        </p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="App navigatie">
+      <a href="#top">Vandaag</a>
+      <a href="#session-panel">Sessie</a>
+      <a href="#exercise-list">Oefeningen</a>
+    </nav>
+
+    <script src="app.js?v=2"></script>
+  </body>
+</html>
